@@ -46,7 +46,7 @@ public class AdminLogin extends HttpServlet {
 		admin.setId_admin(username);
 		admin.setPass_word(password);
 		if (adminBiz.verify(admin)) {
-			request.getRequestDispatcher("success_test.jsp").forward(request, response);
+			request.getRequestDispatcher("Admin_index.jsp").forward(request, response);
 		}
 		else
 		{

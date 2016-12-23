@@ -22,7 +22,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="target/tsglxt-0.0.1-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="target/tsglxt-0.0.1-SNAPSHOT/WEB-INF/lib/mysql-connector-java-6.0.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
