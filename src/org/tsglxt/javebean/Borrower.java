@@ -8,7 +8,16 @@ public class Borrower {
 	private String br_name;
 	private String br_sex;
 	private String academy;
-	private Date br_createtime;
+	private String password;
+	private String br_createtime;
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 	public String getId_rfid() {
 		return id_rfid;
 	}
@@ -39,10 +48,10 @@ public class Borrower {
 	public void setAcademy(String academy) {
 		this.academy = academy;
 	}
-	public Date getBr_createtime() {
+	public String getBr_createtime() {
 		return br_createtime;
 	}
-	public void setBr_createtime(Date br_createtime) {
+	public void setBr_createtime(String br_createtime) {
 		this.br_createtime = br_createtime;
 	}
 
