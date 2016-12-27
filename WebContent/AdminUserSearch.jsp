@@ -222,13 +222,13 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="AdminUserSearchresult.jsp" method="post" class="form-horizontal ">
+									<form action="/tsglxt/AdminUserSearch" method="post" class="form-horizontal ">
 										<div class="form-group">
 											<label class="col-sm-3 control-label" for="input-normal">用户名</label>
 											<div class="col-sm-6">
-												<input type="text" name="input-normal" class="form-control" placeholder="用户名">												
+												<input type="text" name="name" class="form-control" placeholder="用户名">												
 											</div>
-											<input type="submit" value="查询"></input>
+											<input type="submit" name="name_search" value="查询"></input>
 										</div>
 										
 									</form>
@@ -245,13 +245,13 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="AdminUserSearchresult.jsp" method="post" class="form-horizontal ">
+									<form action="/tsglxt/AdminUserSearch" method="post" class="form-horizontal ">
 										<div class="form-group">
 											<label class="col-sm-3 control-label" for="input-normal">用户ID</label>
 											<div class="col-sm-6">
-												<input type="text" name="input-normal" class="form-control" placeholder="用户ID">												
+												<input type="text" name="id" class="form-control" placeholder="用户ID">												
 											</div>
-											<input type="submit" value="查询"></input>
+											<input type="submit" name="id_search" value="查询"></input>
 										</div>
 									</form>
 								</div>					
@@ -266,13 +266,13 @@
 									</div>
 								</div>
 								<div class="panel-body">
-									<form action="AdminUserSearchresult.jsp" method="post" class="form-horizontal ">
+									<form action="/tsglxt/AdminUserSearch" method="post" class="form-horizontal ">
 										<div class="form-group">
 											<label class="col-sm-3 control-label" for="input-normal">创建时间</label>
 											<div class="col-sm-6">
-												<input type="text" name="input-normal" class="form-control" placeholder="创建时间">												
+												<input type="text" name="time" class="form-control" placeholder="创建时间">												
 											</div>
-											<input type="submit" value="查询"></input>
+											<input type="submit" name="time_search" value="查询"></input>
 										</div>
 									</form>
 								</div>					

@@ -1,5 +1,10 @@
 ﻿ <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@page import="javax.servlet.jsp.jstl.sql.Result"%>
+<%@page import="javax.naming.directory.SearchResult"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -235,37 +240,24 @@
 													<th>操作</th>
 												</tr>
 											</thead>   
-											<tbody>								
-												<tr>
-													<td>123456</td>
-													<td>11403020102</td>
-													<td>邓登彬</td>
-													<td>男</td>
-													<td>计算机学院</td>
-													<td>
-														<a class="btn btn-info" href="table.html#">
-															<i class="fa fa-edit "></i>                                            
-														</a>
-														<a class="btn btn-danger" href="table.html#">
-															<i class="fa fa-trash-o "></i> 
-														</a>
-													</td>
-												</tr>
-												<tr>
-													<td>23456</td>
-													<td>122434543</td>
-													<td>程乾松</td>
-													<td>男</td>
-													<td>计算机学院</td>
-													<td>
-														<a class="btn btn-info" href="table.html#">
-															<i class="fa fa-edit "></i>                                            
-														</a>
-														<a class="btn btn-danger" href="table.html#">
-															<i class="fa fa-trash-o "></i> 
-														</a>
-													</td>
-												</tr>
+											<tbody>	
+												<c:forEach var="list" items="${name_search_result}">
+													<tr>
+														<td>${list.id_rfid}</td>
+														<td>${list.id_user}</td>
+														<td>${list.br_name}</td>
+														<td>${list.br_sex}</td>
+														<td>${list.academy}</td>
+														<td>
+															<a class="btn btn-info" href="table.html#">
+																<i class="fa fa-edit "></i>                                            
+															</a>
+															<a class="btn btn-danger" href="table.html#">
+																<i class="fa fa-trash-o "></i> 
+															</a>
+														</td>
+													</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 									</div>
