@@ -159,8 +159,6 @@
 										<ul class="nav nav-children">
 											<li><a href="AdminUserAdd.jsp"><span class="text">用户信息添加</span></a></li>
 											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息查询</span></a></li>
-											<li><a href="page-timeline.html"><span class="text">用户信息修改</span></a></li>
-											<li><a href="page-invoice.html"><span class="text">用户信息删除</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -168,9 +166,7 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>借阅信息</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="ui-basic-elements.html"><span class="text">11111</span></a></li>
-											<li><a href="ui-nestable-list.html"><span class="text">22222</span></a></li>
-											<li><a href="ui-buttons.html"><span class="text">3333</span></a></li>											
+											<li><a href="AdminUserSearchLend.jsp"><span class="text">查询借阅信息</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -178,10 +174,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 11111</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 22222</span></a></li>
-											<li><a href="form-validation.html"><span class="text"> 333333</span></a></li>
-											<li><a href="form-dropzone.html"><span class="text"> 444444</span></a></li>
+											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
+											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>
@@ -237,7 +231,9 @@
 													<th>姓名</th>
 													<th>性别</th>
 													<th>学院</th>
+													<th>创建时间</th>
 													<th>操作</th>
+													
 												</tr>
 											</thead>   
 											<tbody>	
@@ -248,11 +244,12 @@
 														<td>${list.br_name}</td>
 														<td>${list.br_sex}</td>
 														<td>${list.academy}</td>
+														<td>${list.br_createtime}</td>
 														<td>
-															<a class="btn btn-info" href="table.html#">
+															<a class="btn btn-info" href="Adminuseredit.jsp?id_rfid=${list.id_rfid}">
 																<i class="fa fa-edit "></i>                                            
 															</a>
-															<a class="btn btn-danger" href="table.html#">
+															<a class="btn btn-danger" href="/tsglxt/AdminUserDelete?id_rfid=${list.id_rfid}">
 																<i class="fa fa-trash-o "></i> 
 															</a>
 														</td>

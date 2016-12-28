@@ -1,5 +1,10 @@
- <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+﻿ <!DOCTYPE html>
+<%@page import="javax.servlet.jsp.jstl.sql.Result"%>
+<%@page import="javax.naming.directory.SearchResult"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -154,8 +159,6 @@
 										<ul class="nav nav-children">
 											<li><a href="AdminUserAdd.jsp"><span class="text">用户信息添加</span></a></li>
 											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息查询</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息修改</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息删除</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -163,9 +166,7 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>借阅信息</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="ui-basic-elements.html"><span class="text">11111</span></a></li>
-											<li><a href="ui-nestable-list.html"><span class="text">22222</span></a></li>
-											<li><a href="ui-buttons.html"><span class="text">3333</span></a></li>											
+											<li><a href="AdminUserSearchLend.jsp"><span class="text">查询借阅信息</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -173,10 +174,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 11111</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 22222</span></a></li>
-											<li><a href="form-validation.html"><span class="text"> 333333</span></a></li>
-											<li><a href="form-dropzone.html"><span class="text"> 444444</span></a></li>
+											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
+											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>
@@ -212,7 +211,58 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-
+					<div class="row">		
+						<div class="col-lg-12">
+							<div class="panel panel-default bk-bg-white">
+								<div class="panel-heading bk-bg-white">
+									<h6><i class="fa fa-table"></i><span class="break"></span>查询结果</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="table-responsive">	
+										<table class="table table-striped table-bordered bootstrap-datatable datatable">
+											<thead>
+												<tr>
+													<th>RFID卡号</th>
+													<th>学号</th>
+													<th>借阅人</th>
+													<th>借阅时间</th>
+													<th>应该归还时间</th>
+													<th>实际归还时间</th>
+													<th>超期时间</th>
+													
+												</tr>
+											</thead>   
+											<tbody>	
+												<c:forEach var="list" items="${name_search_result}">
+													<tr>
+														<td>${list.id_rfid}</td>
+														<td>${list.id_user}</td>
+														<td>${list.bo_name}</td>
+														<td>${list.bo_borrow_time}</td>
+														<td>${list.bo_sgb_time}</td>
+														<td>${list.bo_gb_time}</td>
+														<td>${list.bo_ex_day}</td>
+														<td>
+															<a class="btn btn-info" href="Adminuseredit.jsp?id_rfid=${list.id_rfid}">
+																<i class="fa fa-edit "></i>                                            
+															</a>
+															<a class="btn btn-danger" href="/tsglxt/AdminUserDelete?id_rfid=${list.id_rfid}">
+																<i class="fa fa-trash-o "></i> 
+															</a>
+														</td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</div>
 					
 				<!-- End Main Page -->
 				

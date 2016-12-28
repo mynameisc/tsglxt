@@ -1,5 +1,5 @@
- <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+﻿ <!DOCTYPE html>
+ <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -154,8 +154,6 @@
 										<ul class="nav nav-children">
 											<li><a href="AdminUserAdd.jsp"><span class="text">用户信息添加</span></a></li>
 											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息查询</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息修改</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息删除</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -163,9 +161,7 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>借阅信息</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="ui-basic-elements.html"><span class="text">11111</span></a></li>
-											<li><a href="ui-nestable-list.html"><span class="text">22222</span></a></li>
-											<li><a href="ui-buttons.html"><span class="text">3333</span></a></li>											
+											<li><a href="AdminUserSearchLend.jsp"><span class="text">查询借阅信息</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -173,16 +169,16 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 11111</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 22222</span></a></li>
-											<li><a href="form-validation.html"><span class="text"> 333333</span></a></li>
-											<li><a href="form-dropzone.html"><span class="text"> 444444</span></a></li>
+											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
+											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>
 							</nav>
 						</div>
 						<!-- End Sidebar Menu-->
+						
+						
 					</div>
 					<!-- Sidebar Footer-->
 					<div class="sidebar-footer">					
@@ -212,7 +208,40 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-
+					<h4>${error_info}</h4>
+				<form action="/tsglxt/AdminUserEdit" method="post">
+					<div class="form-group">
+						<label for="nf-email">id_rfid</label>
+						<input type="text" name="id_rfid" class="form-control" value="${param.id_rfid }" readOnly="true">
+					</div>
+					<div class="form-group">
+						<label for="nf-email">学号</label>
+						<input type="text" name="id_user" class="form-control" placeholder="用户名">
+					</div>
+					<div class="form-group">
+						<label for="nf-email">用户名</label>
+						<input type="text" name="name" class="form-control" placeholder="用户名">
+					</div>
+					<div class="form-group">
+						<label for="nf-password">性别</label>
+						<input type="text" name="sex" class="form-control" placeholder="性别">
+					</div>
+					<div>
+						<label for="nf-password">学院</label>
+						<input type="text"  name="academy" class="form-control" placeholder="学院">
+					</div>
+					<div>
+						<label for="nf-password">密码</label>
+						<input type="password" name="password"  class="form-control" placeholder="密码">
+					</div>
+					<div>
+						<label for="nf-password">确认密码</label>
+						<input type="password"  name="re_password" class="form-control" placeholder="确认密码">
+					</div>
+					<div>
+						<input type="submit" value="提交"></input>
+					</div>
+				</form>
 					
 				<!-- End Main Page -->
 				

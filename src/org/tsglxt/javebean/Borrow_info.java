@@ -9,9 +9,9 @@ public class Borrow_info {
 	private String id_rfid;
 	private String id_user;
 	private String bo_name;
-	private Date bo_borrow_time;//借阅时间
-	private Date bo_sgb_time;//应该归还时间
-	private Date bo_gb_time;//实际归还世时间
+	private String bo_borrow_time;//借阅时间
+	private String bo_sgb_time;//应该归还时间
+	private String bo_gb_time;//实际归还世时间
 	private String bo_ex_day;//超期时间
 	public String getId_rfid() {
 		return id_rfid;
@@ -31,29 +31,34 @@ public class Borrow_info {
 	public void setBo_name(String bo_name) {
 		this.bo_name = bo_name;
 	}
-	public Date getBo_borrow_time() {
+	public String getBo_borrow_time() {
 		return bo_borrow_time;
 	}
-	public void setBo_borrow_time(Date bo_borrow_time) {
+	public void setBo_borrow_time(String bo_borrow_time) {
 		this.bo_borrow_time = bo_borrow_time;
 	}
-	public Date getBo_gb_time() {
+	public String getBo_gb_time() {
 		return bo_gb_time;
 	}
-	public void setBo_gb_time(Date bo_gb_time) {
+	public void setBo_gb_time(String bo_gb_time) {
 		this.bo_gb_time = bo_gb_time;
 	}
-	public Date getBo_sgb_time() throws ParseException {
 
+	public String getBo_sgb_time() throws ParseException {
+		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(bo_borrow_time);
+		cal.setTime(simpleDateFormat.parse(bo_borrow_time));
 		cal.add(Calendar.DATE, 30);
-	    bo_borrow_time=cal.getTime();
+	    Date date=cal.getTime();
+	    bo_sgb_time=simpleDateFormat.format(date);
 		return bo_sgb_time;
 	}
 	public String getBo_ex_day() {
 		try {
-			int time=daysBetween(bo_borrow_time,bo_gb_time);
+			SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+			Date smDate=simpleDateFormat.parse(bo_borrow_time);
+			Date bdDate=simpleDateFormat.parse(bo_gb_time);
+			int time=daysBetween(smDate,bdDate);
 			bo_ex_day=String.valueOf(time);
 			return bo_ex_day;
 		} catch (ParseException e) {
