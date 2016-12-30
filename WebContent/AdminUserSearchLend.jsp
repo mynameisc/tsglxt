@@ -169,8 +169,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
+											<li><a href="/tsglxt/AdminBookGetrfid"><span class="text"> 添加图书</span></a></li>
+											<li><a href="AdminBookSearch.jsp"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>

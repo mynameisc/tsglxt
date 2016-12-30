@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	${addmessage}	
 	success
 </body>
 </html>

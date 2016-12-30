@@ -169,8 +169,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
+											<li><a href="/tsglxt/AdminBookGetrfid"><span class="text"> 添加图书</span></a></li>
+											<li><a href="AdminBookSearch.jsp"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>
@@ -212,7 +212,7 @@
 				<form action="/tsglxt/AdminUserEdit" method="post">
 					<div class="form-group">
 						<label for="nf-email">id_rfid</label>
-						<input type="text" name="id_rfid" class="form-control" value="${param.id_rfid }" readOnly="true">
+						<input type="text" name="id_rfid" class="form-control" value="${param.id_rfid}" readOnly="true">
 					</div>
 					<div class="form-group">
 						<label for="nf-email">学号</label>

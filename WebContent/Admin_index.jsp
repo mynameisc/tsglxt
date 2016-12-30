@@ -65,7 +65,8 @@
 	</head>
 	
 	<body>
-	
+		${addmessage}	
+		${editmessage}		
 		<!-- Start: Header -->
 		<div class="navbar" role="navigation">
 			<div class="container-fluid container-nav">
@@ -154,8 +155,6 @@
 										<ul class="nav nav-children">
 											<li><a href="AdminUserAdd.jsp"><span class="text">用户信息添加</span></a></li>
 											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息查询</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息修改</span></a></li>
-											<li><a href="AdminUserSearch.jsp"><span class="text">用户信息删除</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -163,9 +162,7 @@
 											<i class="fa fa-tasks" aria-hidden="true"></i><span>借阅信息</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="ui-basic-elements.html"><span class="text">11111</span></a></li>
-											<li><a href="ui-nestable-list.html"><span class="text">22222</span></a></li>
-											<li><a href="ui-buttons.html"><span class="text">3333</span></a></li>											
+											<li><a href="AdminUserSearchLend.jsp"><span class="text">查询借阅信息</span></a></li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -173,10 +170,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 11111</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 22222</span></a></li>
-											<li><a href="form-validation.html"><span class="text"> 333333</span></a></li>
-											<li><a href="form-dropzone.html"><span class="text"> 444444</span></a></li>
+											<li><a href="/tsglxt/AdminBookGetrfid"><span class="text"> 添加图书</span></a></li>
+											<li><a href="AdminBookSearch.jsp"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>

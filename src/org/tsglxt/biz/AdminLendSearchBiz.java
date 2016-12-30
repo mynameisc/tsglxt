@@ -18,7 +18,7 @@ public class AdminLendSearchBiz {
 		
 		List<String> values=new ArrayList<String>();
 		List<Borrow_info>  user_result=new ArrayList<Borrow_info>();;
-		String sql="select id_rfid,id_user,bo_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where bo_name=?;";
+		String sql="select id_rfid,id_user,bo_name,bk_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where bo_name=?;";
 		values.add(bo_name);
 		try
 		{
@@ -35,6 +35,7 @@ public class AdminLendSearchBiz {
 		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
+		            borrow_info.setBk_name((String)row.get("bk_name"));
 		            borrow_info.setBo_borrow_time((String)row.get("bo_borrow_time"));      
 		            borrow_info.setBo_gb_time((String)row.get("bo_gb_time"));		       
 		            user_result.add(borrow_info);
@@ -58,7 +59,7 @@ public class AdminLendSearchBiz {
 		
 		List<String> values=new ArrayList<String>();
 		List<Borrow_info>  user_result=new ArrayList<Borrow_info>();;
-		String sql="select id_rfid,id_user,bo_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where id_user=?;";
+		String sql="select id_rfid,id_user,bo_name,bk_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where id_user=?;";
 		values.add(id);
 		try
 		{
@@ -75,6 +76,7 @@ public class AdminLendSearchBiz {
 		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
+		            borrow_info.setBk_name((String)row.get("bk_name"));
 		            borrow_info.setBo_borrow_time((String)row.get("bo_borrow_time"));
 		            borrow_info.setBo_gb_time((String)row.get("bo_gb_time"));
 		            user_result.add(borrow_info);
@@ -97,7 +99,7 @@ public class AdminLendSearchBiz {
 		
 		List<String> values=new ArrayList<String>();
 		List<Borrow_info>  user_result=new ArrayList<Borrow_info>();;
-		String sql="select id_rfid,id_user,bo_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where bo_borrow_time=?;";
+		String sql="select id_rfid,id_user,bo_name,bk_name,bo_borrow_time,bo_sgb_time,bo_gb_time,bo_ex_day from borrow_info where bo_borrow_time=?;";
 		values.add(time);
 		try
 		{
@@ -114,6 +116,7 @@ public class AdminLendSearchBiz {
 		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
+		            borrow_info.setBk_name((String)row.get("bk_name"));
 		            borrow_info.setBo_borrow_time((String)row.get("bo_borrow_time"));
 		            borrow_info.setBo_gb_time((String)row.get("bo_gb_time"));
 		            user_result.add(borrow_info);

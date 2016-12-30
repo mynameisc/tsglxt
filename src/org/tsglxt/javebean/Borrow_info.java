@@ -9,6 +9,7 @@ public class Borrow_info {
 	private String id_rfid;
 	private String id_user;
 	private String bo_name;
+	private String bk_name;
 	private String bo_borrow_time;//借阅时间
 	private String bo_sgb_time;//应该归还时间
 	private String bo_gb_time;//实际归还世时间
@@ -30,6 +31,12 @@ public class Borrow_info {
 	}
 	public void setBo_name(String bo_name) {
 		this.bo_name = bo_name;
+	}
+	public String getBk_name() {
+		return bk_name;
+	}
+	public void setBk_name(String bo_name) {
+		this.bk_name = bo_name;
 	}
 	public String getBo_borrow_time() {
 		return bo_borrow_time;

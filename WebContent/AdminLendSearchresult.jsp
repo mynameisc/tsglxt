@@ -174,8 +174,8 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i><span>图书管理</span>
 										</a>
 										<ul class="nav nav-children">
-											<li><a href="form-elements.html"><span class="text"> 添加图书</span></a></li>
-											<li><a href="form-wizard.html"><span class="text"> 查询图书</span></a></li>
+											<li><a href="/tsglxt/AdminBookGetrfid"><span class="text"> 添加图书</span></a></li>
+											<li><a href="AdminBookSearch.jsp"><span class="text"> 查询图书</span></a></li>
 										</ul>
 									</li>									
 								</ul>
@@ -229,6 +229,7 @@
 													<th>RFID卡号</th>
 													<th>学号</th>
 													<th>借阅人</th>
+													<th>借阅的书籍</th>
 													<th>借阅时间</th>
 													<th>应该归还时间</th>
 													<th>实际归还时间</th>
@@ -242,6 +243,7 @@
 														<td>${list.id_rfid}</td>
 														<td>${list.id_user}</td>
 														<td>${list.bo_name}</td>
+														<td>${list.bk_name}</td>
 														<td>${list.bo_borrow_time}</td>
 														<td>${list.bo_sgb_time}</td>
 														<td>${list.bo_gb_time}</td>

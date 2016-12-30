@@ -6,14 +6,27 @@ package org.tsglxt.javebean;
  */
 public class Bk_info {
 //	public int id;
+	private String bk_rfid;
 	private String bk_name;
 	private String bk_author;
 	private String bk_publish;
-	private float bk_price;
+	private String bk_price;
 	private String bk_address;
-	private int bk_amount;
-	private int bk_re_amount;
+	private String bk_amount;
+	private String bk_re_amount;
 	
+	public void setBk_re_amount(String bk_re_amount) {
+		this.bk_re_amount = bk_re_amount;
+	}
+
+	public String getBk_rfid() {
+		return bk_rfid;
+	}
+
+	public void setBk_rfid(String bk_rfid) {
+		this.bk_rfid = bk_rfid;
+	}
+
 	public String getBk_name() {
 		return bk_name;
 	}
@@ -38,11 +51,11 @@ public class Bk_info {
 		this.bk_publish = bk_publish;
 	}
 
-	public float getBk_price() {
+	public String getBk_price() {
 		return bk_price;
 	}
 
-	public void setBk_price(float bk_price) {
+	public void setBk_price(String bk_price) {
 		this.bk_price = bk_price;
 	}
 
@@ -54,21 +67,22 @@ public class Bk_info {
 		this.bk_address = bk_address;
 	}
 
-	public int getBk_amount() {
+	public String getBk_amount() {
 		return bk_amount;
 	}
 
-	public void setBk_amount(int bk_amount) {
+	public void setBk_amount(String bk_amount) {
 		this.bk_amount = bk_amount;
 	}
 
-	public int getBk_re_amount() {
+	public String getBk_re_amount() {
 		return bk_re_amount;
 	}
 
-	public Bk_info(String bk_name,String bk_author,String bk_publish,float bk_price,
-			String bk_address,int bk_amount)
-	{
+	public Bk_info(String bk_rfid,String bk_name,String bk_author,String bk_publish,String bk_price,
+			String bk_address,String bk_amount)
+	{	
+				this.bk_rfid=bk_rfid;
 				this.bk_name=bk_name;
 				this.bk_author=bk_author;
 				this.bk_publish=bk_publish;
@@ -78,5 +92,9 @@ public class Bk_info {
 				this.bk_re_amount=bk_amount;
 				
 				
+	}
+
+	public Bk_info() {
+		// TODO Auto-generated constructor stub
 	}
 }
