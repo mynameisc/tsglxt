@@ -1,5 +1,5 @@
- <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+﻿ <!DOCTYPE html>
+ <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -65,9 +65,7 @@
 	</head>
 	
 	<body>
-		${addmessage}	
-		${deletemessage}
-		${editmessage}		
+	
 		<!-- Start: Header -->
 		<div class="navbar" role="navigation">
 			<div class="container-fluid container-nav">
@@ -179,6 +177,8 @@
 							</nav>
 						</div>
 						<!-- End Sidebar Menu-->
+						
+						
 					</div>
 					<!-- Sidebar Footer-->
 					<div class="sidebar-footer">					
@@ -208,7 +208,44 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-
+					<h4>${error_info}</h4>
+				<form action="/tsglxt/AdminBookEdit" method="post">
+					<div class="form-group">
+						<label for="nf-email">id_rfid</label>
+						<input type="text" name="bk_rfid" class="form-control" value="${param.bk_rfid}" readOnly="true">
+					</div>
+					<div class="form-group">
+						<label for="nf-email">图书名</label>
+						<input type="text" name="bk_name" class="form-control" placeholder="图书名">
+					</div>
+					<div class="form-group">
+						<label for="nf-email">作者</label>
+						<input type="text" name="bk_author" class="form-control" placeholder="作者">
+					</div>
+					<div class="form-group">
+						<label for="nf-password">出版社</label>
+						<input type="text" name="bk_publish" class="form-control" placeholder="出版社">
+					</div>
+					<div>
+						<label for="nf-password">价格</label>
+						<input type="text"  name="bk_price" class="form-control" placeholder="价格">
+					</div>
+					<div>
+						<label for="nf-password">地址</label>
+						<input type=text" name="bk_address"  class="form-control" placeholder="地址">
+					</div>
+					<div>
+						<label for="nf-password">总数量</label>
+						<input type="text"  name="bk_amount" class="form-control" placeholder="总数量">
+					</div>
+					<div>
+						<label for="nf-password">剩余数量</label>
+						<input type="text"  name="bk_re_amount" class="form-control" placeholder="剩余数量">
+					</div>
+					<div>
+						<input type="submit" value="提交"></input>
+					</div>
+				</form>
 					
 				<!-- End Main Page -->
 				

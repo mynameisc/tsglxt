@@ -1,5 +1,10 @@
- <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+﻿ <!DOCTYPE html>
+<%@page import="javax.servlet.jsp.jstl.sql.Result"%>
+<%@page import="javax.naming.directory.SearchResult"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -65,9 +70,7 @@
 	</head>
 	
 	<body>
-		${addmessage}	
-		${deletemessage}
-		${editmessage}		
+	
 		<!-- Start: Header -->
 		<div class="navbar" role="navigation">
 			<div class="container-fluid container-nav">
@@ -208,7 +211,58 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-
+					<div class="row">		
+						<div class="col-lg-12">
+							<div class="panel panel-default bk-bg-white">
+								<div class="panel-heading bk-bg-white">
+									<h6><i class="fa fa-table"></i><span class="break"></span>查询结果</h6>
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="table-responsive">	
+										<table class="table table-striped table-bordered bootstrap-datatable datatable">
+											<thead>
+												<tr>
+													<th>图书名</th>
+													<th>作者</th>
+													<th>出版社</th>
+													<th>价格</th>
+													<th>位置</th>
+													<th>总数量</th>
+													<th>剩余数量</th>
+													<th>操作</th>
+												</tr>
+											</thead>   
+											<tbody>	
+												<c:forEach var="list" items="${book_search_result}">
+													<tr>
+														<td>${list.bk_name}</td>
+														<td>${list.bk_author}</td>
+														<td>${list.bk_publish}</td>
+														<td>${list.bk_price}</td>
+														<td>${list.bk_address}</td>
+														<td>${list.bk_amount}</td>
+														<td>${list.bk_re_amount}</td>
+														<td>
+															<a class="btn btn-info" href="AdminBookedit.jsp?bk_rfid=${list.bk_rfid}">
+																<i class="fa fa-edit "></i>                                            
+															</a>
+															<a class="btn btn-danger" href="/tsglxt/AdminBookDelete?bk_rfid=${list.bk_rfid}">
+																<i class="fa fa-trash-o "></i> 
+															</a>
+														</td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</div>
 					
 				<!-- End Main Page -->
 				

@@ -1,5 +1,5 @@
- <!DOCTYPE html>
- <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+﻿ <!DOCTYPE html>
+ <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html lang="en">
 
 	<head>
@@ -65,9 +65,7 @@
 	</head>
 	
 	<body>
-		${addmessage}	
 		${deletemessage}
-		${editmessage}		
 		<!-- Start: Header -->
 		<div class="navbar" role="navigation">
 			<div class="container-fluid container-nav">
@@ -208,8 +206,71 @@
 						</div>					
 					</div>
 					<!-- End Page Header -->
-
 					
+					<div class="panel panel-default bk-bg-white">
+								<div class="panel-heading bk-bg-white">
+									<h6><i class="fa fa-indent red"></i>根据书名查询</h6>							
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<form action="/tsglxt/AdminBookSearch" method="post" class="form-horizontal ">
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="input-normal">书名</label>
+											<div class="col-sm-6">
+												<input type="text" name="bookname" class="form-control" placeholder="书名">												
+											</div>
+											<input type="submit" name="bookname_search" value="查询"></input>
+										</div>
+										
+									</form>
+								</div>					
+					</div>
+					
+					
+					<div class="panel panel-default bk-bg-white">
+								<div class="panel-heading bk-bg-white">
+									<h6><i class="fa fa-indent red"></i>根据作者查询</h6>							
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<form action="/tsglxt/AdminBookSearch" method="post" class="form-horizontal ">
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="input-normal">作者</label>
+											<div class="col-sm-6">
+												<input type="text" name="author" class="form-control" placeholder="作则">												
+											</div>
+											<input type="submit" name="author_search" value="查询"></input>
+										</div>
+									</form>
+								</div>					
+					</div>
+					
+					<div class="panel panel-default bk-bg-white">
+								<div class="panel-heading bk-bg-white">
+									<h6><i class="fa fa-indent red"></i>根据出版社查询</h6>							
+									<div class="panel-actions">
+										<a href="#" class="btn-minimize"><i class="fa fa-caret-up"></i></a>
+										<a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+									</div>
+								</div>
+								<div class="panel-body">
+									<form action="/tsglxt/AdminBookSearch" method="post" class="form-horizontal ">
+										<div class="form-group">
+											<label class="col-sm-3 control-label" for="input-normal">出版社</label>
+											<div class="col-sm-6">
+												<input type="text" name="publish" class="form-control" placeholder="出版社">												
+											</div>
+											<input type="submit" name="publish_search" value="出版社"></input>
+										</div>
+									</form>
+								</div>					
+					</div>
 				<!-- End Main Page -->
 				
 				<!-- Footer -->
@@ -303,5 +364,5 @@
 		<!-- end: JavaScript-->
 		
 	</body>
-	
+
 </html>
