@@ -5,8 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import org.tsglxt.seversocket.receive;
 public class Borrow_info {
-	private String id_rfid;
 	private String id_user;
 	private String bo_name;
 	private String bk_name;
@@ -14,12 +15,6 @@ public class Borrow_info {
 	private String bo_sgb_time;//应该归还时间
 	private String bo_gb_time;//实际归还世时间
 	private String bo_ex_day;//超期时间
-	public String getId_rfid() {
-		return id_rfid;
-	}
-	public void setId_rfid(String id_rfid) {
-		this.id_rfid = id_rfid;
-	}
 	public String getId_user() {
 		return id_user;
 	}

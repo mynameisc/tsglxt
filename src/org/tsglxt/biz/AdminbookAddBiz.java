@@ -14,8 +14,6 @@ import org.tsglxt.javebean.Lsd;
 public class AdminbookAddBiz {
 	public List<Lsd> get_bookrfid() {
 
-		
-		
 		List<String> values=new ArrayList<String>();
 		List<Lsd>  lsd_info=new ArrayList<Lsd>();
 		String sql="select book_rfid,book_fromid,book_time from lsd;";

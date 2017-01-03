@@ -56,7 +56,7 @@ public class AdminUserSearchLend extends HttpServlet {
 			while(iterator.hasNext())
 			{
 				Borrow_info borrow_info=list.get(0);
-				System.out.println(borrow_info.getId_rfid());
+				//System.out.println(borrow_info.getId_rfid());
 				iterator.next();
 				
 			}
@@ -73,7 +73,7 @@ public class AdminUserSearchLend extends HttpServlet {
 			while(iterator.hasNext())
 			{
 				Borrow_info borrow_info=list.get(0);
-				System.out.println(borrow_info.getId_rfid());
+			//	System.out.println(borrow_info.getId_rfid());
 				iterator.next();
 				
 			}
@@ -90,7 +90,7 @@ public class AdminUserSearchLend extends HttpServlet {
 			while(iterator.hasNext())
 			{
 				Borrow_info borrow_info=list.get(0);
-				System.out.println(borrow_info.getId_rfid());
+		//		System.out.println(borrow_info.getId_rfid());
 				iterator.next();
 				
 			}

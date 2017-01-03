@@ -32,7 +32,7 @@ public class AdminLendSearchBiz {
 		        for(int i=0;i<result.getRowCount();i++){  
 		            Map row = result.getRows()[i]; 
 		            Borrow_info borrow_info=new Borrow_info();
-		            borrow_info.setId_rfid((String)row.get("id_rfid"));
+//		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
 		            borrow_info.setBk_name((String)row.get("bk_name"));
@@ -73,7 +73,7 @@ public class AdminLendSearchBiz {
 		        for(int i=0;i<result.getRowCount();i++){  
 		            Map row = result.getRows()[i]; 
 		            Borrow_info borrow_info=new Borrow_info();
-		            borrow_info.setId_rfid((String)row.get("id_rfid"));
+//		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
 		            borrow_info.setBk_name((String)row.get("bk_name"));
@@ -113,7 +113,7 @@ public class AdminLendSearchBiz {
 		        for(int i=0;i<result.getRowCount();i++){  
 		            Map row = result.getRows()[i]; 
 		            Borrow_info borrow_info=new Borrow_info();
-		            borrow_info.setId_rfid((String)row.get("id_rfid"));
+//		            borrow_info.setId_rfid((String)row.get("id_rfid"));
 		            borrow_info.setId_user((String)row.get("id_user"));
 		            borrow_info.setBo_name((String)row.get("bo_name"));
 		            borrow_info.setBk_name((String)row.get("bk_name"));
