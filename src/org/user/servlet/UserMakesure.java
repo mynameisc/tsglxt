@@ -81,12 +81,7 @@ public class UserMakesure extends HttpServlet {
 			Date date=new Date();
 			String bo_borrow_time=simpleDateFormat.format(date);
 			borrow_info.setBo_borrow_time(bo_borrow_time);
-			try {
-				borrow_info.getBo_sgb_time();//设置应该归还的时间
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			borrow_info.getBo_sgb_time();//设置应该归还的时间
 			try {
 				userBorrowerBiz.addBorrowInfo(borrow_info);//添加借阅信息
 			} catch (ParseException e) {

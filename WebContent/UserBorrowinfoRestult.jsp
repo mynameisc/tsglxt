@@ -213,35 +213,29 @@
 										<table class="table table-striped table-bordered bootstrap-datatable datatable">
 											<thead>
 												<tr>
-													<th>图书RFID</th>
-													<th>图书名</th>
-													<th>作者</th>
-													<th>出版社</th>
-													<th>位置</th>
-													<th>总数量</th>
-													<th>剩余数量</th>
+													<th>借阅人ID</th>
+													<th>借阅人姓名</th>
+													<th>书名</th>
+													<th>借阅时间</th>
+													<th>应该归还时间</th>
+													<th>归还时间</th>
+													<th>超期天数</th>
 												</tr>
 											</thead>   
 											<tbody>	
-												<c:forEach var="list" items="${bk_infos}">
+												<c:forEach var="list" items="${borrow_infos}">
 													<tr>
-														<td>${list.bk_rfid}</td>
+														<td>${list.id_user}</td>
+														<td>${list.bo_name}</td>
 														<td>${list.bk_name}</td>
-														<td>${list.bk_author}</td>
-														<td>${list.bk_publish}</td>
-														<td>${list.bk_address}</td>
-														<td>${list.bk_amount}</td>
-														<td>${list.bk_re_amount}</td>
+														<td>${list.bo_borrow_time}</td>
+														<td>${list.bo_sgb_time}</td>
+														<td>${list.bo_gb_time}</td>
+														<td>${list.bo_ex_day}</td>
 													</tr>
 												</c:forEach>
 											</tbody>
 										</table>
-										<div>
-										<form action="/tsglxt/UserMakesure" method="post">
-											<input type="text" name="bk_infos" value="param.${bk_infos}">
-											<input type="submit" value="确认借阅">
-										</form>	
-										</div>
 									</div>
 								</div>
 							</div>

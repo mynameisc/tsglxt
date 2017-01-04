@@ -46,15 +46,21 @@ public class Borrow_info {
 		this.bo_gb_time = bo_gb_time;
 	}
 
-	public String getBo_sgb_time() throws ParseException {
-		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(simpleDateFormat.parse(bo_borrow_time));
-		cal.add(Calendar.DATE, 30);
-	    Date date=cal.getTime();
-	    bo_sgb_time=simpleDateFormat.format(date);
+	public String getBo_sgb_time() {
+		try {SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
+			Calendar cal = Calendar.getInstance();
+		
+			cal.setTime(simpleDateFormat.parse(bo_borrow_time));
+			cal.add(Calendar.DATE, 30);
+			Date date=cal.getTime();
+			bo_sgb_time=simpleDateFormat.format(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return bo_sgb_time;
 	}
+	
 	public String getBo_ex_day() {
 		try {
 			SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
