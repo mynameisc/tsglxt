@@ -241,9 +241,9 @@
 								<div class="panel-body">
 									<form action="/tsglxt/AdminUserSearchLend" method="post" class="form-horizontal ">
 										<div class="form-group">
-											<label class="col-sm-3 control-label" for="input-normal">借阅人ID</label>
+											<label class="col-sm-3 control-label" for="input-normal">借阅人学号</label>
 											<div class="col-sm-6">
-												<input type="text" name="id" class="form-control" placeholder="用户ID">												
+												<input type="text" name="user_id" class="form-control" placeholder="用户ID">												
 											</div>
 											<input type="submit" name="bo_id_search" value="查询"></input>
 										</div>

@@ -239,8 +239,7 @@
 										</table>
 										<div>
 										<form action="/tsglxt/UserMakesureGB" method="post">
-											<input type="text" name="bk_infos" value="param.${bk_infos}">
-											<input type="submit" value="确认借阅">
+											<input type="submit" value="确认归还">
 										</form>	
 										</div>
 									</div>

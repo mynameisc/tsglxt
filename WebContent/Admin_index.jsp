@@ -89,7 +89,7 @@
 								<img src="assets/img/avatar.jpg" class="img-circle" alt="" />
 							</figure>
 							<div class="profile-info">
-								<span class="name">John Smith Doe</span>
+								<span class="name">Admin</span>
 								<span class="role"><i class="fa fa-circle bk-fg-success"></i> Administrator</span>
 							</div>			
 							<i class="fa custom-caret"></i>

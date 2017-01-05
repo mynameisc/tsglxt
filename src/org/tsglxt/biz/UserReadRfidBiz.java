@@ -39,9 +39,9 @@ public class UserReadRfidBiz {
 		            lsdUserInfos.add(lsdUserInfo);
 		        }
 		        try {
-		            String sql2="DELETE FROM lsdUserInfo WHERE User_rfid ='"+lsdUserInfos.get(0).getUser_Rfid()+"'";
-			        sqlCommandBean.setSqlValue(sql2);
-			        sqlCommandBean.executeUpdate();
+//		            String sql2="DELETE FROM lsdUserInfo WHERE User_rfid ='"+lsdUserInfos.get(0).getUser_Rfid()+"'";
+//			        sqlCommandBean.setSqlValue(sql2);
+//			        sqlCommandBean.executeUpdate();
 				} catch (Exception e) {
 					// TODO: handle exception
 				}

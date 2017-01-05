@@ -210,7 +210,16 @@
 					</div>
 					<!-- End Page Header -->
 				 <h3 >${error_info}</h3>
+				 <form action="/tsglxt/AdminUserAddReadRfid" method="post">
+				 	<div>
+				 		<input type="submit" value="读取rfid卡号">
+				 	</div>
+				 </form>
 				<form action="/tsglxt/AdminUserAdd" method="post">
+					<div class="form-group">
+						<label for="nf-email">rfid</label>
+					<input type="text" name="rfid" class="form-control" value="${user_rfid}" placeholder="rfid">
+					</div>
 					<div class="form-group">
 					<label for="nf-email">学号</label>
 					<input type="text" name="id_user" class="form-control" placeholder="学号">
@@ -238,9 +247,6 @@
 					<div class="form-group">
 						<input type="submit"  value="提交"></input>
 					</div>
-						
-					
-					
 				</form>
 					
 				<!-- End Main Page -->

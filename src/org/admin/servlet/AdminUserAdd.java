@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.crypto.Data;
 
 import org.tsglxt.biz.AdminUserAddBiz;
+import org.tsglxt.biz.UserReadRfidBiz;
 import org.tsglxt.javebean.*;
 /**
  * Servlet implementation class AdminUserAdd
@@ -42,6 +43,7 @@ public class AdminUserAdd extends HttpServlet {
 		// TODO Auto-generated method stub
 		Borrower borrower=new Borrower();
 		request.setCharacterEncoding("UTF-8");
+		borrower.setId_rfid(request.getParameter("rfid"));
 		borrower.setId_user(request.getParameter("id_user"));
 		borrower.setBr_name(request.getParameter("name"));
 		borrower.setBr_sex(request.getParameter("sex"));
@@ -58,7 +60,12 @@ public class AdminUserAdd extends HttpServlet {
 			AdminUserAddBiz adminUserAddBiz=new AdminUserAddBiz();
 			int i=adminUserAddBiz.userAdd(borrower);
 			if(i!=0)
-				request.getRequestDispatcher("success_test.jsp").forward(request, response);
+			{
+					UserReadRfidBiz userReadRfidBiz=new UserReadRfidBiz();
+					userReadRfidBiz.clearlsdUser(borrower.getId_rfid());
+					request.setAttribute("addmessage","<script type='text/javascript' >alert('用户添加成功');</script>");
+					request.getRequestDispatcher("Admin_index.jsp").forward(request, response);
+			}
 			else
 			{
 				request.getRequestDispatcher("AdminUserAdd.jsp").forward(request, response);

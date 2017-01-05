@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.tsglxt.biz.AdminUserEditBiz;
+import org.tsglxt.biz.UserReadRfidBiz;
 import org.tsglxt.javebean.Borrower;
 
 /**
@@ -58,7 +59,10 @@ public class AdminUserEdit extends HttpServlet {
 			AdminUserEditBiz adminUserEditBiz=new AdminUserEditBiz();
 			int i=adminUserEditBiz.userEdit(borrower);
 			if(i!=0)
-				request.getRequestDispatcher("success_test.jsp").forward(request, response);
+			{
+				request.setAttribute("editmessage","<script type='text/javascript' >alert('用户修改成功');</script>");
+				request.getRequestDispatcher("Admin_index.jsp").forward(request, response);
+		}
 			else
 			{
 				request.setAttribute("error_info", "未修改成功");

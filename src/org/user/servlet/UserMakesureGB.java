@@ -50,11 +50,11 @@ public class UserMakesureGB extends HttpServlet {
 			i++;
 			userBookGBBiz.setGBbookTime(borrow_info);//设置归还时间
 			userBookGBBiz.add_Reamount(borrow_info.getBk_name());//重置剩余数量；
-//			userBookGBBiz.clearLSD(book_fromid);//清除临时表
+			userBookGBBiz.clearLSD(book_fromid);//清除临时表
 			iterator.next();
 		}
 		request.setAttribute("message","<script type='text/javascript' >alert('归还成功');</script>");
-		request.getRequestDispatcher("User_index.jsp").forward(request, response);
+		request.getRequestDispatcher("user_index.jsp").forward(request, response);
 	}
 
 	/**

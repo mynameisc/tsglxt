@@ -226,7 +226,6 @@
 										<table class="table table-striped table-bordered bootstrap-datatable datatable">
 											<thead>
 												<tr>
-													<th>RFID卡号</th>
 													<th>学号</th>
 													<th>借阅人</th>
 													<th>借阅的书籍</th>
@@ -240,7 +239,6 @@
 											<tbody>	
 												<c:forEach var="list" items="${name_search_result}">
 													<tr>
-														<td>${list.id_rfid}</td>
 														<td>${list.id_user}</td>
 														<td>${list.bo_name}</td>
 														<td>${list.bk_name}</td>
@@ -248,14 +246,6 @@
 														<td>${list.bo_sgb_time}</td>
 														<td>${list.bo_gb_time}</td>
 														<td>${list.bo_ex_day}</td>
-														<td>
-															<a class="btn btn-info" href="Adminuseredit.jsp?id_rfid=${list.id_rfid}">
-																<i class="fa fa-edit "></i>                                            
-															</a>
-															<a class="btn btn-danger" href="/tsglxt/AdminUserDelete?id_rfid=${list.id_rfid}">
-																<i class="fa fa-trash-o "></i> 
-															</a>
-														</td>
 													</tr>
 												</c:forEach>
 											</tbody>

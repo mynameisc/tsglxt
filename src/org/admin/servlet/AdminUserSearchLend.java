@@ -66,8 +66,8 @@ public class AdminUserSearchLend extends HttpServlet {
 		}
 		if(request.getParameter("bo_id_search")!=null)
 		{
-			String id=request.getParameter("id");
-			list=adminLendSearchBiz.bo_id_search(id);
+			String user_id=request.getParameter("user_id");
+			list=adminLendSearchBiz.bo_id_search(user_id);
 			Iterator iterator;
 			iterator=list.iterator();
 			while(iterator.hasNext())

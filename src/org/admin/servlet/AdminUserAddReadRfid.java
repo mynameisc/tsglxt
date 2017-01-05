@@ -1,0 +1,53 @@
+package org.admin.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.tsglxt.biz.UserReadRfidBiz;
+import org.tsglxt.javebean.LsdUserInfo;
+
+/**
+ * Servlet implementation class AdminUserAddReadRfid
+ */
+@WebServlet("/AdminUserAddReadRfid")
+public class AdminUserAddReadRfid extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AdminUserAddReadRfid() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		List<LsdUserInfo> lsdUserInfos=new ArrayList<LsdUserInfo>();
+		UserReadRfidBiz userReadRfidBiz=new UserReadRfidBiz();
+		lsdUserInfos=userReadRfidBiz.readRfid();
+		String user_rfid=lsdUserInfos.get(0).getUser_Rfid();
+		request.setAttribute("user_rfid", user_rfid);
+		request.getRequestDispatcher("AdminUserAdd.jsp").forward(request, response);
+		doGet(request, response);
+	}
+
+}

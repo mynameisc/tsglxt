@@ -11,9 +11,10 @@ public class AdminUserAddBiz {
 	public int  userAdd(Borrower borrower)
 	{
 		int i=0;
-		String sql="insert into borrower(id_user,br_name,br_sex,br_academy,br_password,br_createtime)"
-				+ " values(?,?,?,?,?,?);";
+		String sql="insert into borrower(id_rfid,id_user,br_name,br_sex,br_academy,br_password,br_createtime)"
+				+ " values(?,?,?,?,?,?,?);";
 		List<String> values=new ArrayList<String>();
+		values.add(borrower.getId_rfid());
 		values.add(borrower.getId_user());
 		values.add(borrower.getBr_name());
 		values.add(borrower.getBr_sex());
