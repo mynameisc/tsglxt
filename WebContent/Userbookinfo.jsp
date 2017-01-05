@@ -163,7 +163,11 @@
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>查询借阅的图书</span>
 										</a>
 										</li>
-								
+										<li>
+											<a href="UserBookGB.jsp">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>归还图书</span>
+											</a>
+										</li>
 								</ul>
 							</nav>
 						</div>
@@ -238,7 +242,6 @@
 										</table>
 										<div>
 										<form action="/tsglxt/UserMakesure" method="post">
-											<input type="text" name="bk_infos" value="param.${bk_infos}">
 											<input type="submit" value="确认借阅">
 										</form>	
 										</div>

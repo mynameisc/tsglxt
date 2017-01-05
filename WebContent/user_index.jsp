@@ -65,7 +65,7 @@
 	</head>
 	
 	<body>
-	
+		${message}
 		<!-- Start: Header -->
 		<div class="navbar" role="navigation">
 			<div class="container-fluid container-nav">
@@ -148,16 +148,20 @@
 										</div>
 									</div>
 										<li>
-										<a href="UserbookBorrower.jsp">
-											<i class="fa fa-laptop" aria-hidden="true"></i><span>借阅图书</span>
-										</a>
+											<a href="UserbookBorrower.jsp">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>借阅图书</span>
+											</a>
 										</li>
 										<li>
-										<a href"/tsglxt/UserSearch">
-											<i class="fa fa-laptop" aria-hidden="true"></i><span>查询借阅的图书</span>
-										</a>
+											<a href"/tsglxt/UserSearch">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>查询借阅的图书</span>
+											</a>
 										</li>
-								
+										<li>
+											<a href="UserBookGB.jsp">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>归还图书</span>
+											</a>
+										</li>
 								</ul>
 							</nav>
 						</div>

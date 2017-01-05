@@ -1,6 +1,7 @@
 package org.tsglxt.biz;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -94,6 +95,26 @@ public class UserReadRfidBiz {
 				}
 		return borrowers;
 		
+	}
+	public boolean clearlsdUser(String User_rfid)
+	{
+
+		int i=0;
+		String sql="Delete from lsduserinfo where User_rfid=?;";
+		List<String> values = new ArrayList<String>();
+		values.add(User_rfid);
+		try {
+			SQLCommandBean sqlCommandBean=new SQLCommandBean();
+			sqlCommandBean.setConn(ConnectionManager.getConnection());
+			sqlCommandBean.setSqlValue(sql);
+			sqlCommandBean.setValues(values);
+			i=sqlCommandBean.executeUpdate();
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}		
+		return false;
 	}
 
 }

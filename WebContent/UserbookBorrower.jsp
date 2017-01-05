@@ -157,7 +157,11 @@
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>查询借阅的图书</span>
 										</a>
 										</li>
-								
+										<li>
+											<a href="UserBookGB.jsp">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>归还图书</span>
+											</a>
+										</li>
 								</ul>
 							</nav>
 						</div>
@@ -194,7 +198,7 @@
 				
 					<div>
 					<form action="/tsglxt/UserReadBook" method="post">
-						<input type="submit" value="刷图书" >
+						<input type="submit" value="刷新图书" >
 					</form>
 					</div>
 					

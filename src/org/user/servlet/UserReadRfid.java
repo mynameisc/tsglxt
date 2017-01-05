@@ -45,14 +45,15 @@ public class UserReadRfid extends HttpServlet {
 		while(iterator.hasNext())
 		{
 			LsdUserInfo lsdUserInfo=list.get(0);
-			System.out.println(lsdUserInfo.getUser_Rfid());
-			System.out.println(lsdUserInfo.getUser_From());
+			System.out.println("用户id"+lsdUserInfo.getUser_Rfid());
+			System.out.println("机器号"+lsdUserInfo.getUser_From());
 
 			iterator.next();
 		}
-		userReadRfidBiz.getUserId(list.get(0).getUser_Rfid());
-		borrower=userReadRfidBiz.getUserId(list.get(0).getUser_Rfid());
-		request.setAttribute("userRFID",list.get(0).getUser_Rfid() );
+		
+		borrower=userReadRfidBiz.getUserId(list.get(0).getUser_Rfid());//根据rfid卡号得到id；
+		userReadRfidBiz.clearlsdUser(list.get(0).getUser_Rfid());//根据rfid卡号删除lsduserinfo
+		request.setAttribute("userRFID",list.get(0).getUser_Rfid());
 		request.setAttribute("userID", borrower.get(0).getId_user());
 		request.getRequestDispatcher("UserLogin.jsp").forward(request, response);
 	}

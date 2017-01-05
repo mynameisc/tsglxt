@@ -13,14 +13,15 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import org.tsglxt.biz.LsdBiz;
+import org.tsglxt.biz.LsdUserinfoBiz;
 import org.tsglxt.javebean.*;
 
 public class receive {
 //	 private static SqlSessionFactory sqlSessionFactory;
 	    private static Reader reader; 
 
-	    public static BlockingQueue<Lsd> bqmessage=new LinkedBlockingQueue<Lsd> ();
-	    public static BlockingQueue<String> bqsos=new LinkedBlockingQueue<String> ();
+	    public static BlockingQueue<Lsd> Bookmessage=new LinkedBlockingQueue<Lsd> ();
+	    public static BlockingQueue<LsdUserInfo> usermessage=new LinkedBlockingQueue<LsdUserInfo> ();
 	    public static ExecutorService cachedThreadPool;
 	    public static ServerSocket  SocketServer;
 	    public static  Thread thread1,thread2;
@@ -31,7 +32,9 @@ public static void init(){
 		System.out.println("开始监听1080端口");
 		Socket socket;
 		thread1=new Thread(new SaveThread());
+		thread2=new Thread(new SaveUserThread());
 		cachedThreadPool.execute(thread1);
+		cachedThreadPool.execute(thread2);
 		while((socket=SocketServer.accept())!=null){//阻塞等待设备连接
 			System.out.println(socket.getRemoteSocketAddress()+"设备链接");
 			cachedThreadPool.execute(new Thread(new ReceiveThread(socket)));
@@ -119,19 +122,43 @@ public static void shutdown(){
 					{
 						str=str.substring(1, str.length()-1);
 						String[] strs=str.split(",");
-						Lsd lsd=new Lsd();
-						SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd hh-mm-ss");
-						Date date=new Date();
-						String time= simpleDateFormat.format(date);
-						lsd.setBooK_fromid(strs[0]);
-						lsd.setBook_rfid(strs[1]);
-						lsd.setBook_time(time);
-						if(strs==null)
-							continue;
-						if(strs.length!=2)
-							continue;
-	
-	                    bqmessage.put(lsd);//如果里面没有空间就调用此方法，发生阻塞然后将m放到队列里
+						int i=Integer.parseInt(strs[0]);
+						if(i<500)
+						{
+							Lsd lsd=new Lsd();
+							SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+							Date date=new Date();
+							String time= simpleDateFormat.format(date);
+							lsd.setBooK_fromid(strs[0]);
+							lsd.setBook_rfid(strs[1]);
+							lsd.setBook_time(time);
+							if(strs==null)
+								continue;
+							if(strs.length!=2)
+								continue;
+		
+		                    Bookmessage.put(lsd);//如果里面没有空间就调用此方法，发生阻塞然后将m放到队列里
+						}
+						else
+						{
+							
+
+							LsdUserInfo lsdUserInfo=new LsdUserInfo();
+							SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+							Date date=new Date();
+							String time= simpleDateFormat.format(date);
+							lsdUserInfo.setUser_From(strs[0]);
+							lsdUserInfo.setUser_Rfid(strs[1]);
+							lsdUserInfo.setUser_Time(time);
+							if(strs==null)
+								continue;
+							if(strs.length!=2)
+								continue;
+		
+		                    usermessage.put(lsdUserInfo);//如果里面没有空间就调用此方法，发生阻塞然后将m放到队列里
+						
+						}
+						
 					}
 					
 				}
@@ -180,7 +207,7 @@ public static void shutdown(){
 		Lsd lsd=null;
 		
 		try {
-			while((lsd=bqmessage.take())!=null){
+			while((lsd=Bookmessage.take())!=null){
 				LsdBiz lsdBiz=new LsdBiz();
 				int i=lsdBiz.addLsdmessage(lsd);
 				if(i!=0)
@@ -202,10 +229,34 @@ public static void shutdown(){
 } 
  
  
- static class SaveSosThread implements Runnable{
+ static class SaveUserThread implements Runnable{
 
 	@Override
-	public void run() {}
+	public void run() {
+
+		LsdUserInfo lsdUserInfo=null;
+		
+		try {
+			while((lsdUserInfo=usermessage.take())!=null){
+				LsdUserinfoBiz lsdUserinfoBiz=new LsdUserinfoBiz();
+				int i=lsdUserinfoBiz.addLsdmessage(lsdUserInfo);
+				if(i!=0)
+				{
+					
+					System.out.println("用户信息存入成功");
+				}else {
+					System.out.println("用户信息存入失败");
+				}
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	
+		
+	}
 	 
 	 
 	 

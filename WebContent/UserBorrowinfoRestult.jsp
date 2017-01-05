@@ -163,7 +163,11 @@
 											<i class="fa fa-laptop" aria-hidden="true"></i><span>查询借阅的图书</span>
 										</a>
 										</li>
-								
+										<li>
+											<a href="UserBookGB.jsp">
+												<i class="fa fa-laptop" aria-hidden="true"></i><span>归还图书</span>
+											</a>
+										</li>
 								</ul>
 							</nav>
 						</div>
@@ -198,7 +202,7 @@
 					</div>
 					<!-- End Page Header -->
 	
-										<div class="row">		
+					<div class="row">		
 						<div class="col-lg-12">
 							<div class="panel panel-default bk-bg-white">
 								<div class="panel-heading bk-bg-white">
@@ -213,7 +217,7 @@
 										<table class="table table-striped table-bordered bootstrap-datatable datatable">
 											<thead>
 												<tr>
-													<th>借阅人ID</th>
+													<th>借阅人学号</th>
 													<th>借阅人姓名</th>
 													<th>书名</th>
 													<th>借阅时间</th>
@@ -223,7 +227,7 @@
 												</tr>
 											</thead>   
 											<tbody>	
-												<c:forEach var="list" items="${borrow_infos}">
+											<c:forEach var="list" items="${borrow_infos}">
 													<tr>
 														<td>${list.id_user}</td>
 														<td>${list.bo_name}</td>
@@ -233,7 +237,7 @@
 														<td>${list.bo_gb_time}</td>
 														<td>${list.bo_ex_day}</td>
 													</tr>
-												</c:forEach>
+											</c:forEach>		
 											</tbody>
 										</table>
 									</div>

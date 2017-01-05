@@ -54,7 +54,7 @@ public class UserLogin extends HttpServlet {
 			HttpSession session = request.getSession(); 
 			session.setAttribute("bookMachineid", bookMachineid);
 			session.setAttribute("userName", username);
-			session.setAttribute("userPassword", password);
+			session.setAttribute("userPassword", password);			
 			request.getRequestDispatcher("user_index.jsp").forward(request, response);
 		}else
 		{

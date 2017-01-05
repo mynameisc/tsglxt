@@ -51,7 +51,7 @@ public class UserReadBook extends HttpServlet {
 		List<Lsd> lsd_rfid=new ArrayList<Lsd>();
 		List<Bk_info> bk_infos=new ArrayList<Bk_info>();
 		UserReadBookBiz userReadBookBiz=new UserReadBookBiz();
-		lsd_rfid=userReadBookBiz.getBookRfid(bookMachineid);
+		lsd_rfid=userReadBookBiz.getBookRfid(bookMachineid);//图书的rfid号
 		Iterator iterator;
 		iterator=lsd_rfid.iterator();
 		int i=0;
@@ -59,13 +59,13 @@ public class UserReadBook extends HttpServlet {
 		{
 			Lsd lsd=lsd_rfid.get(i);
 			i++;
-			System.out.println(lsd.getBook_rfid());
+			System.out.println("需要借阅图书的rfid"+lsd.getBook_rfid());
 			Bk_info bk_info=new Bk_info();
 			bk_info= userReadBookBiz.getBookInfo(lsd.getBook_rfid()).get(0);
 			bk_infos.add(bk_info);
 			iterator.next();
 		}
-		request.setAttribute("bk_infos", bk_infos);
+		request.setAttribute("bk_infos", bk_infos);//显示到页面前端的信息。
 		request.getRequestDispatcher("Userbookinfo.jsp").forward(request, response);
 		//doGet(request, response);
 	}

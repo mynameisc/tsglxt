@@ -63,6 +63,10 @@ public class Borrow_info {
 	
 	public String getBo_ex_day() {
 		try {
+			if(bo_gb_time==null)
+			{
+				return null;
+			}
 			SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
 			Date smDate=simpleDateFormat.parse(bo_borrow_time);
 			Date bdDate=simpleDateFormat.parse(bo_gb_time);
@@ -73,7 +77,7 @@ public class Borrow_info {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return bo_ex_day;
+		return null;
 	}
 
 	
@@ -88,8 +92,7 @@ public class Borrow_info {
         cal.setTime(bdate);    
         long time2 = cal.getTimeInMillis();         
         long between_days=(time2-time1)/(1000*3600*24);  
-            
-       return Integer.parseInt(String.valueOf(between_days));           
+        return Integer.parseInt(String.valueOf(between_days));           
     } 
 
 }
